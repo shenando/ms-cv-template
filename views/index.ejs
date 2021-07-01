@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hot dog not hot dog</title>
+    <title>Quality Photo Idenitfier</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   </head>
   <body>
-     
-    <h1>Please upload an image below:</h1>
-    <form action="/" enctype="multipart/form-data" method="post">
-      <input type="file" name="file-to-upload">
-      <input type="submit" value="Upload">
-    </form>  
+     <div class="container col s12 l6 z-depth-3">
+      <h1>Please upload an image:</h1>
+
+
+      <form action="/" enctype="multipart/form-data" method="post">
+        <input type="file" name="file-to-upload">
+        <input type="submit" value="Upload">
+      </form>
+
+        <!-- <form action="/" enctype="multipart/form-data" method="post">
+          <input type="file" name="file-to-upload">
+          <input type="submit" value="Upload" class="btn waves-effect waves-light">
+        </form>  -->
+      </div>
+     </div> 
   </body>
 </html>

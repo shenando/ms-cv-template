@@ -1,18 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hot dog not hot dog</title>
+    <title>Quality Photo Idenitfier</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   </head>
   <body>
-    
-      <img src="<%= img%>" alt="uploaded image" />
+    <div class="container z-depth-3">
+      <% if(locals.count === 1) { %>
+        <div class="img-container">
+          <img src='<%= img%>' alt='Dog' class="responsive-img">
+        </div> 
 
+        <div class="card transparent center-align">
+          <div class="card-content">
+            <span class="card-title">9/10</span>
+            <span class="flow-text">Look at that good, good dog!</span>
+          </div>
+        </div>
+      <% }else if (locals.count > 1) { %>
+        <div class="img-container">
+          <img src='<%= img%>' alt='Dog' class="responsive-img"> 
+        </div>
+          <div class="card transparent center-align z-depth-3">
+            <div class="card-content">
+              <span class="card-title">10/10</span>
+              <span class="flow-text">SO MANY DOGS! YES, YES, YES! AMAZING!</span>
+            </div>
+          </div>
+      <% }else { %>
+        <div class="img-container">
+          <img src='<%= img%>' alt='No dog' class="responsive-img"> 
+        </div>
+          <div class="card transparent center-align">
+            <div class="card-content">
+              <span class="card-title">6/10</span>
+              <span class="flow-text">Not a dog in sight :(</span>
+            </div>
+          </div>
+      <% } %>
       <form action="/" enctype="multipart/form-data" method="post">
-      <input type="file" name="file-to-upload" />
-      <input type="submit" value="Upload" />
-    </form>
+        <input type="file" name="file-to-upload">
+        <input type="submit" value="Upload">
+      </form>
+    </div>
+    <!-- <div class="upload-container col s12 valign-wrapper center-align teal lighten-2">
+      <input type="file" name="file-to-upload" class="teal lighten-2">
+      <input type="submit" value="Upload" class="btn waves-effect waves-light">
+    </div> -->
   </body>
 </html>
